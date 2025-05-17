@@ -7,9 +7,11 @@ const app = express();
 
 // Middleware
 app.use(cors({
-    origin: 'https://frontend-task-30.vercel.app/', // Allow all origins for testing; adjust in production
+    origin: 'https://frontend-task-30.vercel.app',
     methods: ['GET', 'POST', 'PUT', 'DELETE'],
+    credentials: true
 }));
+
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
@@ -21,10 +23,10 @@ app.post('/submit', (req, res) => {
     });
 });
 
-// Start the server locally (for testing)
+// Start the server locally
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
     console.log(`Server running on port ${PORT}`);
 });
 
-module.exports = app; // for Vercel
+module.exports = app;
