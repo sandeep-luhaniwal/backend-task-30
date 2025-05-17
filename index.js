@@ -7,7 +7,7 @@ const app = express();
 
 // Middleware
 app.use(cors({
-    origin: '*', // Allow all origins for testing; adjust in production
+    origin: 'https://frontend-task-30.vercel.app/', // Allow all origins for testing; adjust in production
     methods: ['GET', 'POST', 'PUT', 'DELETE'],
     allowedHeaders: ['Content-Type', 'Authorization']
 }));
